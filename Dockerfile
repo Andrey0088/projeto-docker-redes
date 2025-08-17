@@ -1,21 +1,22 @@
 # Usar uma imagem base do Python
 FROM python:3.9-slim
-# Instalar o Git
-RUN apt-get update && apt-get install -y git
 
 # Define o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# [cite_start]Clona o seu repositório do GitHub para dentro do contêiner [cite: 14]
-# IMPORTANTE: Substitua 'SEU_USUARIO/SEU_REPOSITORIO.git' pelo link do seu repositório
-RUN git clone https://github.com/Andrey0088/redes.git
-
-RUN ls -R
+# Copia o arquivo de dependências primeiro
+# Isso aproveita o cache do Docker. Se o arquivo não mudar, essa camada não é reconstruída.
+COPY requirements.txt .
 
 # Instala as dependências da aplicação
-RUN pip install Flask psycopg2-binary
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia o resto do código da sua aplicação para o diretório de trabalho
+COPY . .
+
 # Expõe a porta que a aplicação vai rodar
 EXPOSE 5000
 
 # Comando para iniciar a aplicação quando o contêiner for iniciado
-CMD ["python", "redes/app.py"]
+# Assumindo que seu arquivo python se chama app.py
+CMD ["python", "app.py"]
