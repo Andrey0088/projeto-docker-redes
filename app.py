@@ -65,27 +65,27 @@ def index():
     finally:
         conn.close()
 
-    # Página visual com GIF e fogos de artifício
+ 
     return f"""
     <html>
     <head>
         <title>Conexão Bem-Sucedida</title>
         <style>
             body {{
-              
-                    background-image: url('https://i.imgur.com/0y0Bf8C.jpg');  /* exemplo de rede de dados */
-                    background-size: cover;
-                    background-position: center;
-                    color: #fff;
-                    font-family: Arial, sans-serif;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    text-align: center;
-                    overflow: hidden;
-
+                background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop');
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+                overflow: hidden;
+                background-color: rgba(0, 0, 0, 0.5);
+                background-blend-mode: darken;
             }}
             h1 {{
                 font-size: 3em;
@@ -99,10 +99,11 @@ def index():
             img {{
                 width: 300px;
                 height: auto;
+                border-radius: 15px;
             }}
             @keyframes glow {{
-                from {{ text-shadow: 0 0 10px #ffd700, 0 0 20px #ff6347; }}
-                to {{ text-shadow: 0 0 20px #ff6347, 0 0 30px #ffd700; }}
+                from {{ text-shadow: 0 0 10px #fff, 0 0 20px #0077cc, 0 0 30px #0055aa; }}
+                to {{ text-shadow: 0 0 20px #fff, 0 0 30px #0077cc, 0 0 40px #0055aa; }}
             }}
         </style>
     </head>
