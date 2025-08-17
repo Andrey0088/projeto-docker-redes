@@ -72,16 +72,20 @@ def index():
         <title>Conexão Bem-Sucedida</title>
         <style>
             body {{
-                background-color: #1a1a2e;
-                color: #fff;
-                font-family: 'Arial', sans-serif;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                text-align: center;
-                overflow: hidden;
+              
+                    background-image: url('https://i.imgur.com/0y0Bf8C.jpg');  /* exemplo de rede de dados */
+                    background-size: cover;
+                    background-position: center;
+                    color: #fff;
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    text-align: center;
+                    overflow: hidden;
+
             }}
             h1 {{
                 font-size: 3em;
@@ -103,7 +107,7 @@ def index():
         </style>
     </head>
     <body>
-        <h1>Deu certo! 🎉</h1>
+        <h1>Deu certo! Conexão com o Banco de Dados bem-sucedida! 🎉</h1>
         <p>Versão do PostgreSQL: {db_version[0]}</p>
         <img src="https://media.giphy.com/media/3o7TKsQG1yY6hBzXqk/giphy.gif" alt="Fogos de artifício">
     </body>
